@@ -1,0 +1,10 @@
+{
+	"name": "ls_AzureDataLakeStorage1",
+	"properties": {
+		"annotations": [],
+		"type": "AzureBlobFS",
+		"typeProperties": {
+			"url": "https://caresyncproject23.dfs.core.windows.net/"
+		}
+	}
+}
