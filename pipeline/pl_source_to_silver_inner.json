@@ -229,7 +229,7 @@
 						{
 							"type": "Query",
 							"text": {
-								"value": "UPDATE ctrl.audit_log\nset STATUS = 'SUCCESS',end_time = SYSDATETIME(),records_written= @{activity('bronze_to_silver').output.runOutput}\nwhere adf_run_id ='@{pipeline().parameters.adf_run_id}' and table_id= '@{pipeline().parameters.table_id}'",
+								"value": "@concat(\n    'UPDATE ctrl.audit_log SET ',\n    'status = ''SUCCESS'', ',\n    'end_time = SYSDATETIME(), ',\n    'records_written = ',\n    string(activity('bronze_to_silver').output.runOutput),\n    ' WHERE adf_run_id = ''',\n    pipeline().parameters.adf_run_id,\n    ''' AND table_id = ',\n    string(pipeline().parameters.table_id)\n)",
 								"type": "Expression"
 							}
 						}
@@ -355,7 +355,7 @@
 									{
 										"type": "Query",
 										"text": {
-											"value": "update ctrl.watermark\nset watermark_value=SYSUTCDATETIME()\nWHERE @{pipeline().parameters.table_id}",
+											"value": "@concat(\n    'UPDATE ctrl.watermark SET watermark_value = SYSUTCDATETIME() WHERE table_id = ',\n    pipeline().parameters.table_id\n)",
 											"type": "Expression"
 										}
 									}
