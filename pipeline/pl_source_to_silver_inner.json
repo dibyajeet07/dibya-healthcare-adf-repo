@@ -441,7 +441,14 @@
 									"outputs": [
 										{
 											"referenceName": "ds_Binary1",
-											"type": "DatasetReference"
+											"type": "DatasetReference",
+											"parameters": {
+												"folder": {
+													"value": "@concat(\n    activity('Read table_id').output.firstRow.source_system,\n    '/',activity('Read table_id').output.firstRow.source_table_name,\n    '/',variables('start_time')\n)",
+													"type": "Expression"
+												},
+												"container": "landing"
+											}
 										}
 									]
 								}
