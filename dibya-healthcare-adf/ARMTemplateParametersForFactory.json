@@ -1,0 +1,36 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "dibya-healthcare-adf"
+		},
+		"ls_AzureDataLakeStorage1_properties_typeProperties_url": {
+			"value": "https://caresyncproject23.dfs.core.windows.net/"
+		},
+		"ls_AzureDatabricks_properties_typeProperties_existingClusterId": {
+			"value": "1007-173628-qkty610b"
+		},
+		"ls_KeyVault_properties_typeProperties_baseUrl": {
+			"value": "https://caresynckv23.vault.azure.net/"
+		},
+		"ls_PostgreSql_properties_typeProperties_server": {
+			"value": "ep-wispy-lab-az07ttk3-pooler.c-3.ap-southeast-1.aws.neon.tech"
+		},
+		"ls_PostgreSql_properties_typeProperties_database": {
+			"value": "neondb"
+		},
+		"ls_PostgreSql_properties_typeProperties_username": {
+			"value": "neondb_owner"
+		},
+		"ls_SqlDatabase1_properties_typeProperties_server": {
+			"value": "caresyn-server23.database.windows.net"
+		},
+		"ls_SqlDatabase1_properties_typeProperties_database": {
+			"value": "sql-db-caresyn"
+		},
+		"ls_SqlDatabase1_properties_typeProperties_userName": {
+			"value": "databeli"
+		}
+	}
+}
